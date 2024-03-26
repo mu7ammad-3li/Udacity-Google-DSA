@@ -5,6 +5,8 @@ def nextDay(year,month,day):
     """ This Version Of the program is not logically Correct 
     - It Assumes Every Month is 30 Days 
     """
+    print("nextDay()")
+    print (nextDay.__doc__)
     if (day<30):
         return year,month,day+1
     else:
@@ -28,6 +30,4 @@ if __name__ == "__main__":
     day =int (sys.argv[3]) 
     
     result = nextDay(year,month,day)
-    print (nextDay.__doc__)
-
     print("Next day is :",result[0],result[1],result[2])

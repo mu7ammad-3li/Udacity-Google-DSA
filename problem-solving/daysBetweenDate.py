@@ -1,13 +1,33 @@
 import sys
 from nextdayV1 import nextDay,inputPrinting
 
+def isBeforeDate1(Y1,M1,D1,Y2,M2,D2):
+    if(Y2>Y1):
+        return True
+    elif(Y2==Y1):
+        if(M2>M1):
+            return True
+        elif(M2==M1):
+            if(D2>D1):
+                return True
+            else:
+                return False
+        else:
+            print("Second Date Is Invalid")
+            return False
+    else:
+        print("Second Date Is Invalid")
+        return False
+    
+
+
 def daysBetwwnDates(Y1,M1,D1,Y2,M2,D2):
     """This Script Assumes The First Date In Argument Is The Oldest
     """
     print("daysBetwwnDates()")
     print(daysBetwwnDates.__doc__)
     daysInBetween= 0
-    while(not(Y1==Y2 and M1==M2 and D1==D2)):
+    while(isBeforeDate1(Y1,M1,D1,Y2,M2,D2)):
         result =nextDay(Y1,M1,D1)
         print (result)
         daysInBetween +=1
@@ -16,7 +36,6 @@ def daysBetwwnDates(Y1,M1,D1,Y2,M2,D2):
         D1 = int(result[2])
     return daysInBetween
 
-    
 if __name__ == "__main__":
     inputPrinting(sys.argv)
     Y1 = int(sys.argv[1])
@@ -25,6 +44,8 @@ if __name__ == "__main__":
     Y2 = int(sys.argv[4])
     M2 = int(sys.argv[5])
     D2 =int (sys.argv[6])  
-    print ("Dayes In Betwwen = ",daysBetwwnDates(Y1,M1,D1,Y2,M2,D2))
+    if (isBeforeDate1(Y1,M1,D1,Y2,M2,D2)):
 
-
+        print ("Dayes In Betwwen = ",daysBetwwnDates(Y1,M1,D1,Y2,M2,D2))
+    else : 
+        print("Invalid Date")

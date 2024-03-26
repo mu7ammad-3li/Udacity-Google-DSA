@@ -11,7 +11,8 @@ def nextDay(year,month,day):
     # Mdifify nextDay()to use daysInMonth(Year,Month) -- done
     # Test nextDay() using stub daysInMonth(Year,Month) -- done 
     Days = daysInMonth(year,month)
-    if (day<Days):
+    #TODO:logical Error When Days Of Feb Is more Than 28
+    if (day<int (Days)):
         return year,month,day+1
     else:
         if (month<12):

@@ -5,14 +5,14 @@ def nextDay(year,month,day):
     """ This Version Of the program is not logically Correct 
     - It Assumes Every Month is 30 Days 
     """
-    print("nextDay()")
-    print (nextDay.__doc__)
+    #print("nextDay()")
+    #print (nextDay.__doc__)
 
     # Mdifify nextDay()to use daysInMonth(Year,Month) -- done
     # Test nextDay() using stub daysInMonth(Year,Month) -- done 
     Days = daysInMonth(year,month)
     #TODO:logical Error When Days Of Feb Is more Than 28
-    if (day<int (Days)):
+    if (day<Days):
         return year,month,day+1
     else:
         if (month<12):

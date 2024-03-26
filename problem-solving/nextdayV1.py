@@ -1,5 +1,5 @@
 import sys
-
+from daysInMonth import daysInMonth
 
 def nextDay(year,month,day):
     """ This Version Of the program is not logically Correct 
@@ -7,7 +7,11 @@ def nextDay(year,month,day):
     """
     print("nextDay()")
     print (nextDay.__doc__)
-    if (day<30):
+
+    # Mdifify nextDay()to use daysInMonth(Year,Month) -- done
+    # Test nextDay() using stub daysInMonth(Year,Month) -- done 
+    Days = daysInMonth(year,month)
+    if (day<Days):
         return year,month,day+1
     else:
         if (month<12):

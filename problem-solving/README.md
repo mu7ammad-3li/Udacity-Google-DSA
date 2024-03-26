@@ -301,10 +301,48 @@ At This Point We did not change the output from the last program we just re-stru
 
 Next : 
 
-- [ ] Modify **daysInMonth(Year,Month)**  to be correct except for leep years 
-- [ ] Test Again nextDay() using stub **daysInMonth(Year,Month)**
+- [X] Modify **daysInMonth(Year,Month)**  to be correct except for leep years 
+- [X] Test Again nextDay() using stub **daysInMonth(Year,Month)**
 - [ ] write isLeapYear(Year)
 - [ ] test isLeapYear(Year) separately
 - [ ] modify daysInMonth(Year,Month) to account For leap years
 - [ ] Test daysBetweenDates() for all Cases 
+
+### Leap year 
+What is Leap Year?
+
+A leap year is a year that is divisible by 4 but not by 100, unless it is also divisible by 400. Leap years have an extra day, February 29th, instead of the usual 28 days. 
+
+How to check whether it is a Leap year or not?
+
+To check if a year is a leap year, it should satisfy the following conditions:
+
+    - The year should be divisible by 4.
+    - If the year is divisible by 100, it should also be divisible by 400.
+
+```
+if ((year%4==0 and Not(year %100==0)) OR year %400==0 ):
+    return true 
+else:
+    return False 
+
+```
+```python 
+
+#TODO: write isLeapYear(Year) -- Done
+
+def isLeapYear(Year):
+    if ((Year%4==0 and not (Year %100==0)) or Year %400==0 ):
+        print (f"Year {Year} is Leep Year")
+        return True 
+    else:
+        return False 
+
+```
+- [x] write isLeapYear(Year)
+- [x] test isLeapYear(Year) separately
+- [x] modify daysInMonth(Year,Month) to account For leap years
+- [x] Test daysBetweenDates() for all Cases 
+
+
 

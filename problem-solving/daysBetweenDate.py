@@ -12,11 +12,7 @@ def isBeforeDate1(Y1,M1,D1,Y2,M2,D2):
                 return True
             else:
                 return False
-        else:
-            print("Second Date Is Invalid")
-            return False
     else:
-        print("Second Date Is Invalid")
         return False
     
 
@@ -24,12 +20,13 @@ def isBeforeDate1(Y1,M1,D1,Y2,M2,D2):
 def daysBetwwnDates(Y1,M1,D1,Y2,M2,D2):
     """This Script Assumes The First Date In Argument Is The Oldest
     """
-    print("daysBetwwnDates()")
-    print(daysBetwwnDates.__doc__)
+    #print("daysBetwwnDates()")
+    #print(daysBetwwnDates.__doc__)
+    assert not isBeforeDate1(Y2,M2,D2,Y1,M1,D1)
     daysInBetween= 0
     while(isBeforeDate1(Y1,M1,D1,Y2,M2,D2)):
         result =nextDay(Y1,M1,D1)
-        print (result)
+        #print (result)
         daysInBetween +=1
         Y1 = int(result[0])
         M1 = int(result[1])
@@ -37,15 +34,14 @@ def daysBetwwnDates(Y1,M1,D1,Y2,M2,D2):
     return daysInBetween
 
 if __name__ == "__main__":
-    inputPrinting(sys.argv)
+    #inputPrinting(sys.argv)
     Y1 = int(sys.argv[1])
     M1 = int(sys.argv[2])
     D1 =int (sys.argv[3])
     Y2 = int(sys.argv[4])
     M2 = int(sys.argv[5])
     D2 =int (sys.argv[6])  
-    if (isBeforeDate1(Y1,M1,D1,Y2,M2,D2)):
+    print(f"Starting From {Y1}-{M1}-{D1} to {Y2}-{M2}-{D2}")
+    print ("Dayes In Betwwen = ",daysBetwwnDates(Y1,M1,D1,Y2,M2,D2))
+        
 
-        print ("Dayes In Betwwen = ",daysBetwwnDates(Y1,M1,D1,Y2,M2,D2))
-    else : 
-        print("Invalid Date")

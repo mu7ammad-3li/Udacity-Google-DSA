@@ -265,6 +265,8 @@ def daysBetwwnDates(Y1,M1,D1,Y2,M2,D2):
     """
     print("daysBetwwnDates()")
     print(daysBetwwnDates.__doc__)
+    # throws an exception when  Date 2 Is less than Date 1 
+     assert not isBeforeDate1(Y2,M2,D2,Y1,M1,D1)
     daysInBetween= 0
     while(isBeforeDate1(Y1,M1,D1,Y2,M2,D2)):
         result =nextDay(Y1,M1,D1)
@@ -283,106 +285,26 @@ if __name__ == "__main__":
     Y2 = int(sys.argv[4])
     M2 = int(sys.argv[5])
     D2 =int (sys.argv[6])  
-    if (isBeforeDate1(Y1,M1,D1,Y2,M2,D2)):
-
-        print ("Dayes In Betwwen = ",daysBetwwnDates(Y1,M1,D1,Y2,M2,D2))
-    else : 
-        print("Invalid Date")
+    
+    print ("Dayes In Betwwen = ",daysBetwwnDates(Y1,M1,D1,Y2,M2,D2))
 
 ```
 
+## Real World Problem 
+### What to Do next ? 
 
+- [*] write stub **daysInMonth(Year,Month)** that Always Return 30 
+- [*] Mdifify **nextDay()** to use **daysInMonth(Year,Month)**
+- [*] Test nextDay() using stub **daysInMonth(Year,Month)**
 
+At This Point We did not change the output from the last program we just re-structured the code for the next steps 
 
-## if __name__ == "__main__"
+Next : 
 
-
-## System arguments 
-
-
-```python 
-
-import sys
- 
-# total arguments
-n = len(sys.argv)
-print("Total arguments passed:", n)
-
-```
-```bash 
-$ python3 sysarg.py 1 2 3 
-Total arguments passed =  4
-
-```
-
-### Argv[0]
-argv[0] Contains The name of The Script 
-
-```python 
-print("\nName of Python script:", sys.argv[0])
-```
-```bash 
-    Name of Python script: sysarg.py
-```
-
-```python 
-print("\nArguments passed:", end = " ")
-for i in range(1, n):
-    print(sys.argv[i], end = " ")
-
-```
-
-The end parameter in the print function is used to add any string. At the end of the output of the print statement in python. By default, the print function ends with a newline. Passing the whitespace to the end parameter (end=' ') indicates that the end character has to be identified by whitespace and not a newline.
-
-```bash 
-Arguments passed : 1 2 3 
-```
-
-```python 
-# Addition of numbers
-Sum = 0
-# Using argparse module
-for i in range(1, n):
-    Sum += int(sys.argv[i])
-     
-print("\n\nResult:", Sum)
-```
-```bash 
-Result: 6
-```
-
-Script : 
-```python 
-
-import sys
- 
-# total arguments
-n = len(sys.argv)
-print("Total arguments passed:", n)
- 
-# Arguments passed
-print("\nName of Python script:", sys.argv[0])
- 
-print("\nArguments passed:", end = " ")
-for i in range(1, n):
-    print(sys.argv[i], end = " ")
-     
-# Addition of numbers
-Sum = 0
-# Using argparse module
-for i in range(1, n):
-    Sum += int(sys.argv[i])
-     
-print("\n\nResult:", Sum)
-```
-
-```bash 
-Total arguments passed: 4
-
-Name of Python script: sysarg.py
-
-Arguments passed: 1 2 3 
-
-Result: 6
-```
+- [ ] Modify **daysInMonth(Year,Month)**  to be correct except for leep years 
+- [ ] Test Again nextDay() using stub **daysInMonth(Year,Month)**
+- [ ] write isLeapYear(Year)
+- [ ] test isLeapYear(Year) separately
+- [ ] modify daysInMonth(Year,Month) to account For leap years
+- [ ] Test daysBetweenDates() for all Cases 
 

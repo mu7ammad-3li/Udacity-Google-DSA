@@ -56,7 +56,7 @@ Next day is : 1995 10 2
 ### What Should We Do Next ? 
 
 - [ ] Refine **nextDay** To Work Correctly For real months
-- [*] Define **daysBetweenDates** To Give Approximate Answers using 
+- [X] Define **daysBetweenDates** To Give Approximate Answers using 
 
 **nextDay** Procedure 
 
@@ -293,9 +293,9 @@ if __name__ == "__main__":
 ## Real World Problem 
 ### What to Do next ? 
 
-- [*] write stub **daysInMonth(Year,Month)** that Always Return 30 
-- [*] Mdifify **nextDay()** to use **daysInMonth(Year,Month)**
-- [*] Test nextDay() using stub **daysInMonth(Year,Month)**
+- [x] write stub **daysInMonth(Year,Month)** that Always Return 30 
+- [x] Mdifify **nextDay()** to use **daysInMonth(Year,Month)**
+- [x] Test nextDay() using stub **daysInMonth(Year,Month)**
 
 At This Point We did not change the output from the last program we just re-structured the code for the next steps 
 

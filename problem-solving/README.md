@@ -345,4 +345,11 @@ def isLeapYear(Year):
 - [x] Test daysBetweenDates() for all Cases 
 
 
+## Summary 
 
+0. Dont Panic
+1. Find the inputs 
+2. Find the outputs  
+3. Work through some examples by hand
+4. Find a simple mechanical soultion
+5. Develop encrementally and test as you go 
